@@ -1,6 +1,11 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {Image, ImageBackground, ScrollView} from 'react-native';
+import {
+  Image,
+  ImageBackground,
+  ScrollView,
+  TouchableOpacity,
+} from 'react-native';
 
 import {Text, View} from 'react-native';
 
@@ -40,7 +45,7 @@ const Podcast = ({title, text}: {title: string; text: string}) => {
   );
 };
 
-const PodcastPlayer = () => {
+export const PodcastPlayer = () => {
   return (
     <View
       style={{
@@ -64,7 +69,7 @@ const PodcastPlayer = () => {
   );
 };
 
-const LibraryTab = () => {
+const LibraryTab = ({navigation}: {navigation: any}) => {
   return (
     <>
       <View
@@ -77,10 +82,15 @@ const LibraryTab = () => {
         <Text style={{fontWeight: '600', color: '#FFFFFF', fontSize: 16}}>
           All Podcasts
         </Text>
-        <Image
-          source={require('../images/icon-settings.png')}
-          style={{position: 'absolute', right: 18, top: 18}}
-        />
+        <TouchableOpacity
+          onPress={() => navigation.navigate('Settings')}
+          style={{
+            position: 'absolute',
+            right: 18,
+            top: 18,
+          }}>
+          <Image source={require('../images/icon-settings.png')} />
+        </TouchableOpacity>
       </View>
       <ScrollView
         style={{

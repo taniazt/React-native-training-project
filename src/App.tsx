@@ -4,6 +4,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Login from './Screens/Login';
 import MagicLink from './Screens/MagicLink';
 import Podcasts from './Screens/Podcasts';
+import Settings from './Screens/Settings';
 
 const Stack = createNativeStackNavigator();
 
@@ -14,6 +15,7 @@ const App = () => {
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="MagicLink" component={MagicLink} />
         <Stack.Screen name="Podcasts" component={Podcasts} />
+        <Stack.Screen name="Settings" component={Settings} />
       </Stack.Navigator>
     </NavigationContainer>
   );

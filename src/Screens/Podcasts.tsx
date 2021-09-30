@@ -2,7 +2,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import React from 'react';
 import FeatherIcon from 'react-native-vector-icons/Feather';
 import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons';
-import CustomIcon from '../CustomIcon.js';
+import CustomIcon from '../../CustomIcon.js';
 
 import AccountTab from './AccountTab';
 import LibraryTab from './LibraryTab';
