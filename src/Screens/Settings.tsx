@@ -9,6 +9,7 @@ import {
   View,
 } from 'react-native';
 import FeatherIcon from 'react-native-vector-icons/Feather';
+import {PodcastPlayer} from './LibraryTab';
 
 const DATA = [
   {
@@ -61,33 +62,40 @@ const SettingsItem = ({item}: {item: any}) => {
 };
 
 const Settings = () => (
-  <SectionList
-    sections={DATA}
-    keyExtractor={(item, index) => item.text + index}
-    renderItem={({item}) => <SettingsItem item={item} />}
-    renderSectionHeader={({section: {title}}) => (
-      <Text style={styles.itemTitle}>{title}</Text>
-    )}
-    ListFooterComponent={
-      <>
-        <TouchableOpacity
-          style={{
-            flex: 1,
-            justifyContent: 'center',
-            alignItems: 'center',
-            marginTop: 30,
-            marginHorizontal: 30,
-            marginBottom: 355,
-            backgroundColor: '#D6DCEA',
-            height: 50,
-          }}>
-          <Text style={{color: '#536183', fontWeight: '700', fontSize: 20}}>
-            SAVE
-          </Text>
-        </TouchableOpacity>
-      </>
-    }
-  />
+  <View style={{flex: 1}}>
+    <View style={{flex: 1}}>
+      <SectionList
+        sections={DATA}
+        keyExtractor={(item, index) => item.text + index}
+        renderItem={({item}) => <SettingsItem item={item} />}
+        renderSectionHeader={({section: {title}}) => (
+          <Text style={styles.itemTitle}>{title}</Text>
+        )}
+        ListFooterComponent={
+          <>
+            <TouchableOpacity
+              style={{
+                flex: 1,
+                justifyContent: 'center',
+                alignItems: 'center',
+                marginTop: 30,
+                marginHorizontal: 30,
+                marginBottom: 355,
+                backgroundColor: '#D6DCEA',
+                height: 50,
+              }}>
+              <Text style={{color: '#536183', fontWeight: '700', fontSize: 20}}>
+                SAVE
+              </Text>
+            </TouchableOpacity>
+          </>
+        }
+      />
+    </View>
+    <View>
+      <PodcastPlayer />
+    </View>
+  </View>
 );
 
 const styles = StyleSheet.create({
