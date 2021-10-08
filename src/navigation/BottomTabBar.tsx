@@ -1,11 +1,12 @@
 /* eslint-disable react-native/no-inline-styles */
+import {BottomTabBarProps} from '@react-navigation/bottom-tabs';
 import React, {useState} from 'react';
 import {Text, TouchableOpacity, View} from 'react-native';
 import FeatherIcon from 'react-native-vector-icons/Feather';
 import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import CustomIcon from '../../CustomIcon.js';
 
-const BottomTabBar = ({navigation}: {navigation: any}) => {
+const BottomTabBar: React.FC<BottomTabBarProps> = ({navigation}) => {
   const tabs = [
     {
       icon: <FeatherIcon name="play-circle" size={25} color="grey" />,
