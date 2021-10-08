@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
 
-const verificationStyles = StyleSheet.create({
+const styles = StyleSheet.create({
   verificationContainer: {
     flex: 1,
     justifyContent: 'space-between',
@@ -27,6 +27,7 @@ const verificationStyles = StyleSheet.create({
     fontSize: 18,
     fontWeight: '700',
   },
+  container: {flex: 1},
 });
 
-export default verificationStyles;
+export default styles;

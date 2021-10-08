@@ -1,4 +1,3 @@
-/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {SectionList, Text, TouchableOpacity, View} from 'react-native';
 import PodcastPlayer from '../../components/PlayerSmall';
@@ -42,8 +41,8 @@ const DATA = [
 ];
 
 const Settings = () => (
-  <View style={{flex: 1}}>
-    <View style={{flex: 1}}>
+  <View style={styles.container}>
+    <View style={styles.innerContainer}>
       <SectionList
         sections={DATA}
         keyExtractor={(item, index) => item.text + index}
@@ -53,20 +52,8 @@ const Settings = () => (
         )}
         ListFooterComponent={
           <>
-            <TouchableOpacity
-              style={{
-                flex: 1,
-                justifyContent: 'center',
-                alignItems: 'center',
-                marginTop: 30,
-                marginHorizontal: 30,
-                marginBottom: 355,
-                backgroundColor: '#D6DCEA',
-                height: 50,
-              }}>
-              <Text style={{color: '#536183', fontWeight: '700', fontSize: 20}}>
-                SAVE
-              </Text>
+            <TouchableOpacity style={styles.buttonContainer}>
+              <Text style={styles.buttonText}>SAVE</Text>
             </TouchableOpacity>
           </>
         }

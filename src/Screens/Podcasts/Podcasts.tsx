@@ -1,10 +1,10 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import React from 'react';
-import BottomTabBar from '../navigation/BottomTabBar';
+import BottomTabBar from '../../navigation/BottomTabBar';
 
-import AccountTab from './AccountTab';
-import LibraryTab from './LibraryTab';
-import ListenNowTab from './ListenNowTab';
+import AccountTab from '../AccountTab';
+import LibraryTab from '../LibraryTab';
+import ListenNowTab from '../ListenNowTab';
 
 const TabNavigator = createBottomTabNavigator();
 

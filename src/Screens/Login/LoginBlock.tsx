@@ -1,24 +1,15 @@
-/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {Text, TextInput, TouchableOpacity, View} from 'react-native';
-import loginStyles from './styles';
+import {Text, TextInput, View} from 'react-native';
+import Button from '../../components/Button';
+import styles from './styles';
 
 const LoginBlock = ({navigation}: {navigation: any}) => {
+  const handleOnPress = () => navigation.navigate('MagicLink');
   return (
-    <View style={loginStyles.loginContainer}>
-      <Text
-        style={{
-          color: '#536183',
-          fontSize: 16,
-        }}>
-        Email
-      </Text>
-      <TextInput style={loginStyles.loginInput} />
-      <TouchableOpacity
-        style={loginStyles.loginButton}
-        onPress={() => navigation.navigate('MagicLink')}>
-        <Text style={loginStyles.loginButtonText}>LOGIN</Text>
-      </TouchableOpacity>
+    <View style={styles.loginContainer}>
+      <Text style={styles.loginLabel}>Email</Text>
+      <TextInput style={styles.loginInput} />
+      <Button onPress={handleOnPress} text="LOGIN" />
     </View>
   );
 };

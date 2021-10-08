@@ -1,24 +1,24 @@
 import React from 'react';
-import {Text, TouchableOpacity, View} from 'react-native';
-import verificationStyles from './styles';
+import {Text, View} from 'react-native';
+import Button from '../../components/Button';
+import styles from './styles';
 
 const Verification = ({navigation}: {navigation: any}) => {
+  const handleOnPress = () => navigation.navigate('Podcasts');
+
   return (
-    <View style={verificationStyles.verificationContainer}>
-      <View style={verificationStyles.verificationTextContainer}>
-        <Text style={verificationStyles.verificationText}>
+    <View style={styles.verificationContainer}>
+      <View style={styles.verificationTextContainer}>
+        <Text style={styles.verificationText}>
           We’ve sent you an email to help you log in to your account. The email
           will contain your “Magic Link” that once you click on it will grant
           you access to our App.
         </Text>
       </View>
-      <TouchableOpacity
-        style={verificationStyles.verificationButton}
-        onPress={() => navigation.navigate('Podcasts')}>
-        <Text style={verificationStyles.verificationButtonText}>
-          Please check your email to proceed
-        </Text>
-      </TouchableOpacity>
+      <Button
+        onPress={handleOnPress}
+        text="Please check your email to proceed"
+      />
     </View>
   );
 };

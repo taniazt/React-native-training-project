@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
 
-const loginStyles = StyleSheet.create({
+const styles = StyleSheet.create({
   loginContainer: {
     flex: 1,
     padding: 30,
@@ -16,18 +16,13 @@ const loginStyles = StyleSheet.create({
     marginTop: 9,
     paddingHorizontal: 20,
   },
-  loginButton: {
-    backgroundColor: '#39435B',
-    borderRadius: 4,
-    height: 50,
-    justifyContent: 'center',
-    alignItems: 'center',
+  loginLabel: {
+    color: '#536183',
+    fontSize: 16,
   },
-  loginButtonText: {
-    color: '#FFFFFF',
-    fontSize: 20,
-    fontWeight: '700',
+  container: {
+    flex: 1,
   },
 });
 
-export default loginStyles;
+export default styles;

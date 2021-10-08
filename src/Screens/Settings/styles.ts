@@ -31,6 +31,36 @@ const styles = StyleSheet.create({
     height: 56,
     width: 56,
   },
+  itemContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    alignContent: 'flex-start',
+  },
+  iconContainer: {
+    height: '100%',
+    justifyContent: 'center',
+  },
+  container: {
+    flex: 1,
+  },
+  innerContainer: {
+    flex: 1,
+  },
+  buttonContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 30,
+    marginHorizontal: 30,
+    marginBottom: 355,
+    backgroundColor: '#D6DCEA',
+    height: 50,
+  },
+  buttonText: {
+    color: '#536183',
+    fontWeight: '700',
+    fontSize: 20,
+  },
 });
 
 export default styles;
