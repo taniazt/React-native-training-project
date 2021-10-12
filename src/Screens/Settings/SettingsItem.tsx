@@ -1,14 +1,19 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {Image, Text, TouchableOpacity, View} from 'react-native';
 import styles from './styles';
 import FeatherIcon from 'react-native-vector-icons/Feather';
 
-const SettingsItem = ({item}: {item: any}) => {
-  const [isChecked, setIsChecked] = useState(true);
-  const toggle = () => setIsChecked(!isChecked);
-
+const SettingsItem = ({
+  item,
+  isChecked,
+  onPress,
+}: {
+  item: {text: string; image?: any};
+  isChecked: boolean;
+  onPress: () => void;
+}) => {
   return (
-    <TouchableOpacity onPress={toggle} style={styles.item}>
+    <TouchableOpacity onPress={onPress} style={styles.item}>
       {item.image && <Image style={styles.itemImage} source={item.image} />}
       <View style={styles.itemContainer}>
         <Text style={styles.itemText}>{item.text}</Text>

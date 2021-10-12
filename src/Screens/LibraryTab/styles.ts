@@ -48,6 +48,45 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: '#39435B',
   },
+  compactContainer: {
+    flexDirection: 'row',
+    height: 94,
+    paddingRight: 20,
+    marginBottom: 5,
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    borderTopWidth: 1,
+    borderBottomWidth: 1,
+    borderColor: '#D6DCEA',
+    backgroundColor: 'white',
+  },
+  containerLeft: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    flexShrink: 1,
+  },
+  textContainer: {
+    flex: 1,
+    flexShrink: 1,
+  },
+  compactTitle: {
+    fontSize: 18,
+    fontWeight: '700',
+    color: '#39435B',
+  },
+  compactText: {
+    fontSize: 14,
+    color: '#39435B',
+  },
+  compactImage: {
+    marginHorizontal: 20,
+    height: 60,
+    width: 60,
+  },
+  compactIcon: {
+    height: 18,
+    width: 16,
+  },
 });
 
 export default styles;

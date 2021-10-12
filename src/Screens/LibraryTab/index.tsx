@@ -5,9 +5,13 @@ import {Text, View} from 'react-native';
 import PodcastPlayer from '../../components/PlayerSmall';
 import Podcast from './Podcast';
 import styles from './styles';
-// import PodcastCompact from './PodcastCompact';
+import PodcastCompact from './PodcastCompact';
+
+import {useSelector} from 'react-redux';
 
 const LibraryTab = ({navigation}: {navigation: any}) => {
+  const selectedView = useSelector((state: any) => state.state.isCompact);
+
   return (
     <>
       <View style={styles.headerContainer}>
@@ -21,13 +25,31 @@ const LibraryTab = ({navigation}: {navigation: any}) => {
       <ScrollView
         style={styles.scrollView}
         contentContainerStyle={styles.scrollViewContainer}>
-        <Podcast title="Podcast Title" text="12 unplayed episodes" />
-        <Podcast
-          title="Overcome issues to meet key milestones"
-          text="2 unplayed episodes"
-        />
-        <Podcast title="Focus on the bandwidth" text="0 unplayed episodes" />
-        {/* <PodcastCompact title="dfghjkl" text="hjk" /> */}
+        {selectedView === 'Cards' ? (
+          <>
+            <Podcast title="Podcast Title" text="12 unplayed episodes" />
+            <Podcast
+              title="Overcome issues to meet key milestones"
+              text="2 unplayed episodes"
+            />
+            <Podcast
+              title="Focus on the bandwidth"
+              text="0 unplayed episodes"
+            />
+          </>
+        ) : (
+          <>
+            <PodcastCompact title="Podcast Title" text="12 unplayed episodes" />
+            <PodcastCompact
+              title="Overcome issues to meet key milestones"
+              text="0 unplayed episodes"
+            />
+            <PodcastCompact
+              title="Focus on the bandwidth"
+              text="2 unplayed episodes"
+            />
+          </>
+        )}
       </ScrollView>
       <PodcastPlayer />
     </>
