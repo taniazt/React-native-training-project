@@ -1,5 +1,5 @@
 import React from 'react';
-import {SectionList, Text, TouchableOpacity, View} from 'react-native';
+import {Image, SectionList, Text, TouchableOpacity, View} from 'react-native';
 import PodcastPlayer from '../../components/PlayerSmall';
 import SettingsItem from './SettingsItem';
 import styles from './styles';
@@ -12,7 +12,16 @@ import {
   handleSortByToggle,
 } from '../../store/toggleSlice';
 
-const DATA = [
+type DataItem = {
+  title: titleTypes;
+  data: DataSubitem[];
+};
+type DataSubitem = {
+  text: string;
+  image?: Image;
+};
+
+const DATA: DataItem[] = [
   {
     title: 'LIST VIEW',
     data: [{text: 'Compact'}, {text: 'Cards'}],
@@ -47,7 +56,7 @@ const DATA = [
     ],
   },
 ];
-
+type titleTypes = 'LIST VIEW' | 'SORT BY' | 'AVAILABLE PODCASTS';
 const Settings = () => {
   const dispatch = useDispatch();
 
@@ -59,7 +68,7 @@ const Settings = () => {
 
   const checkedItems = [selectedView, sortBy, ...availablePodcasts];
 
-  const handleIsChecked = (checkedItem: string, title: string) => {
+  const handleIsChecked = (checkedItem: string, title: titleTypes) => {
     switch (title) {
       case 'LIST VIEW':
         dispatch(handleIsCompactToggle({isCompact: checkedItem}));
