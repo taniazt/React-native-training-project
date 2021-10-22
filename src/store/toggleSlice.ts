@@ -1,12 +1,14 @@
 import {createSlice} from '@reduxjs/toolkit';
 
+const settingsInitial = {
+  isCompact: 'Compact',
+  sortBy: 'Newest on top',
+  availablePodcasts: [] as string[],
+};
+
 const toggleSlice = createSlice({
-  name: 'state',
-  initialState: {
-    isCompact: 'Compact',
-    sortBy: 'Newest on top',
-    availablePodcasts: [],
-  },
+  name: 'settings',
+  initialState: settingsInitial,
   reducers: {
     handleIsCompactToggle(state, action) {
       state.isCompact = action.payload.isCompact;
@@ -15,7 +17,7 @@ const toggleSlice = createSlice({
       state.sortBy = action.payload.sortBy;
     },
     handleAvailablePodcastsToggle(state, action) {
-      let result = [...state.availablePodcasts];
+      let result: string[] = [...state.availablePodcasts];
       if (state.availablePodcasts.includes(action.payload.podcastName)) {
         result = result.filter(i => i !== action.payload.podcastName);
       } else {

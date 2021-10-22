@@ -12,6 +12,18 @@ import {
   handleSortByToggle,
 } from '../../store/toggleSlice';
 
+import {
+  PodcastImage1,
+  PodcastImage2,
+  PodcastImage3,
+  PodcastImage4,
+} from '../../images';
+import {
+  selectAvailablePodcasts,
+  selectIsCompact,
+  selectSortBy,
+} from '../../store/selectors';
+
 type DataItem = {
   title: titleTypes;
   data: DataSubitem[];
@@ -39,19 +51,19 @@ const DATA: DataItem[] = [
     data: [
       {
         text: 'Podcast Title',
-        image: require('../../images/podcast-image-1.png'),
+        image: PodcastImage1,
       },
       {
         text: 'Overcome issues to meet key milestones',
-        image: require('../../images/podcast-image-2.png'),
+        image: PodcastImage2,
       },
       {
         text: 'Focus on the bandwidth',
-        image: require('../../images/podcast-image-3.png'),
+        image: PodcastImage3,
       },
       {
         text: 'Sell like it’s going out of fashion',
-        image: require('../../images/podcast-image-4.png'),
+        image: PodcastImage4,
       },
     ],
   },
@@ -60,11 +72,9 @@ type titleTypes = 'LIST VIEW' | 'SORT BY' | 'AVAILABLE PODCASTS';
 const Settings = () => {
   const dispatch = useDispatch();
 
-  const selectedView = useSelector((state: any) => state.state.isCompact);
-  const sortBy = useSelector((state: any) => state.state.sortBy);
-  const availablePodcasts = useSelector(
-    (state: any) => state.state.availablePodcasts,
-  );
+  const selectedView = useSelector(selectIsCompact);
+  const sortBy = useSelector(selectSortBy);
+  const availablePodcasts = useSelector(selectAvailablePodcasts);
 
   const checkedItems = [selectedView, sortBy, ...availablePodcasts];
 
@@ -79,6 +89,8 @@ const Settings = () => {
       case 'AVAILABLE PODCASTS':
         dispatch(handleAvailablePodcastsToggle({podcastName: checkedItem}));
         break;
+      default:
+        'LIST VIEW';
     }
   };
   return (
