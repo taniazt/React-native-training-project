@@ -1,4 +1,6 @@
-export const selectIsCompact = ({settings}: any) => settings.isCompact;
-export const selectSortBy = ({settings}: any) => settings.sortBy;
-export const selectAvailablePodcasts = ({settings}: any) =>
+import {RootState} from '.';
+
+export const selectIsCompact = ({settings}: RootState) => settings.isCompact;
+export const selectSortBy = ({settings}: RootState) => settings.sortBy;
+export const selectAvailablePodcasts = ({settings}: RootState) =>
   settings.availablePodcasts;
