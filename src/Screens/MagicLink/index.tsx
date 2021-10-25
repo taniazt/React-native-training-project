@@ -1,7 +1,8 @@
 import React from 'react';
-
 import {View} from 'react-native';
+
 import Welcome from '../../components/Welcome';
+
 import styles from './styles';
 import Verification from './Verification';
 

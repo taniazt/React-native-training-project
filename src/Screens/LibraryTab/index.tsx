@@ -1,16 +1,15 @@
 import React from 'react';
 import {Image, ScrollView, TouchableOpacity} from 'react-native';
-
 import {Text, View} from 'react-native';
-import PodcastPlayer from '../../components/PlayerSmall';
-import Podcast from './Podcast';
-import styles from './styles';
-import PodcastCompact from './PodcastCompact';
-
 import {useSelector} from 'react-redux';
 
+import PodcastPlayer from '../../components/PlayerSmall';
 import {IconSettings} from '../../images';
 import {selectIsCompact} from '../../store/selectors';
+
+import Podcast from './Podcast';
+import PodcastCompact from './PodcastCompact';
+import styles from './styles';
 
 const podcastInfo = [
   {title: 'Podcast Title', text: '12 unplayed episodes'},

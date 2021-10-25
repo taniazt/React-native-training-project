@@ -1,12 +1,13 @@
 /* eslint-disable react-native/no-inline-styles */
-import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import React from 'react';
+import {SafeAreaView} from 'react-native-safe-area-context';
+
 import Login from './Screens/Login';
 import MagicLink from './Screens/MagicLink';
 import Podcasts from './Screens/Podcasts/Podcasts';
 import Settings from './Screens/Settings';
-import {SafeAreaView} from 'react-native-safe-area-context';
 
 const Stack = createNativeStackNavigator();
 

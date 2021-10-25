@@ -1,8 +1,9 @@
 import React from 'react';
 import {Image, Text, View} from 'react-native';
-import styles from './styles';
 
 import {BgIcon, ArrowIcon} from '../../images';
+
+import styles from './styles';
 
 const PodcastCompact = ({title, text}: {title: string; text: string}) => {
   return (

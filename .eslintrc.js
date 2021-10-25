@@ -2,7 +2,7 @@ module.exports = {
   root: true,
   extends: [
     '@react-native-community',
-    'airbnb-typescript',
+    'airbnb-typescript/base',
     'airbnb/hooks',
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
@@ -48,6 +48,7 @@ module.exports = {
       },
     ],
     'import/prefer-default-export': 'off',
+    'import/extensions': ['off'],
     'import/no-extraneous-dependencies': ['error', {devDependencies: true}],
     'eslint-comments/no-unlimited-disable': 'off',
     'no-nested-ternary': 'off',

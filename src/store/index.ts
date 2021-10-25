@@ -1,4 +1,5 @@
 import {configureStore} from '@reduxjs/toolkit';
+
 import settingsReducer from './toggleSlice';
 
 const middleware = [];

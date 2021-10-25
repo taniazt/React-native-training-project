@@ -1,8 +1,9 @@
 import React from 'react';
 import {Image, ImageBackground, Text} from 'react-native';
-import styles from './styles';
 
 import {WelcomeImage, ArrowIcon} from '../../images';
+
+import styles from './styles';
 
 const Podcast = ({title, text}: {title: string; text: string}) => {
   return (

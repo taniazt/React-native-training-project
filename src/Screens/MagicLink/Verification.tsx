@@ -1,6 +1,8 @@
 import React from 'react';
 import {Text, View} from 'react-native';
+
 import Button from '../../components/Button';
+
 import styles from './styles';
 
 const Verification = ({navigation}: {navigation: any}) => {

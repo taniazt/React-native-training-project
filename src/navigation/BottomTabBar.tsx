@@ -4,6 +4,7 @@ import React, {useState} from 'react';
 import {Text, TouchableOpacity, View} from 'react-native';
 import FeatherIcon from 'react-native-vector-icons/Feather';
 import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons';
+
 import CustomIcon from '../../CustomIcon.js';
 
 const BottomTabBar: React.FC<BottomTabBarProps> = ({navigation}) => {

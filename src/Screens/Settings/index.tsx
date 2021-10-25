@@ -7,18 +7,10 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import PodcastPlayer from '../../components/PlayerSmall';
-import SettingsItem from './SettingsItem';
-import styles from './styles';
-
 import {useDispatch} from 'react-redux';
 import {useSelector} from 'react-redux';
-import {
-  handleAvailablePodcastsToggle,
-  handleIsCompactToggle,
-  handleSortByToggle,
-} from '../../store/toggleSlice';
 
+import PodcastPlayer from '../../components/PlayerSmall';
 import {
   PodcastImage1,
   PodcastImage2,
@@ -30,6 +22,14 @@ import {
   selectIsCompact,
   selectSortBy,
 } from '../../store/selectors';
+import {
+  handleAvailablePodcastsToggle,
+  handleIsCompactToggle,
+  handleSortByToggle,
+} from '../../store/toggleSlice';
+
+import SettingsItem from './SettingsItem';
+import styles from './styles';
 
 type DataItem = {
   title: titleTypes;

@@ -1,9 +1,11 @@
 import React from 'react';
 import {ImageBackground, Text} from 'react-native';
-import welcomeStyles from './styles';
+
 import {WelcomeImage} from '../../images';
 
-const Welcome = ({text}: {text: String}) => {
+import welcomeStyles from './styles';
+
+const Welcome = ({text}: {text: string}) => {
   return (
     <ImageBackground
       source={WelcomeImage}
