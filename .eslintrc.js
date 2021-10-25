@@ -93,15 +93,6 @@ module.exports = {
     '@typescript-eslint/naming-convention': 'off',
     'no-void': 'off',
     '@typescript-eslint/object-curly-spacing': ['off'],
-    'import/extensions': [
-      'error',
-      'ignorePackages',
-      {
-        js: 'never',
-        jsx: 'never',
-        ts: 'never',
-        tsx: 'never',
-      },
-    ],
+    'import/extensions': ['off'],
   },
 };
