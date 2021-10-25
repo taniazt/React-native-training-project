@@ -1,0 +1,11 @@
+/android/**
+/assets/**
+/coverage/**
+/docs/**
+/e2e/**
+/ios/**
+/node_modules/**
+/tests/setup-tests.ts
+babel.config.js
+jest.config.js
+metro.config.js
