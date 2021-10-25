@@ -1,5 +1,11 @@
 import React from 'react';
-import {Image, Text, TouchableOpacity, View} from 'react-native';
+import {
+  Image,
+  ImageSourcePropType,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import styles from './styles';
 import FeatherIcon from 'react-native-vector-icons/Feather';
 
@@ -8,7 +14,7 @@ const SettingsItem = ({
   isChecked,
   onPress,
 }: {
-  item: {text: string; image?: any};
+  item: {text: string; image?: ImageSourcePropType};
   isChecked: boolean;
   onPress: () => void;
 }) => {

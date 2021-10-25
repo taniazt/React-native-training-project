@@ -1,5 +1,12 @@
 import React from 'react';
-import {Image, SectionList, Text, TouchableOpacity, View} from 'react-native';
+import {
+  Image,
+  ImageSourcePropType,
+  SectionList,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import PodcastPlayer from '../../components/PlayerSmall';
 import SettingsItem from './SettingsItem';
 import styles from './styles';
@@ -30,7 +37,7 @@ type DataItem = {
 };
 type DataSubitem = {
   text: string;
-  image?: Image;
+  image?: ImageSourcePropType;
 };
 
 const DATA: DataItem[] = [
