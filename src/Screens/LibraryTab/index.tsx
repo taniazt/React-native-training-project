@@ -1,3 +1,4 @@
+import {NavigationProp, ParamListBase} from '@react-navigation/native';
 import React from 'react';
 import {Image, ScrollView, TouchableOpacity} from 'react-native';
 import {Text, View} from 'react-native';
@@ -20,7 +21,11 @@ const podcastInfo = [
   {title: 'Focus on the bandwidth', text: '0 unplayed episodes'},
 ];
 
-const LibraryTab = ({navigation}: {navigation: any}) => {
+const LibraryTab = ({
+  navigation,
+}: {
+  navigation: NavigationProp<ParamListBase>;
+}) => {
   const selectedView = useSelector(selectIsCompact);
 
   return (
@@ -48,7 +53,7 @@ const LibraryTab = ({navigation}: {navigation: any}) => {
               />
             ))}
       </ScrollView>
-      <PodcastPlayer />
+      <PodcastPlayer navigation={navigation} />
     </>
   );
 };

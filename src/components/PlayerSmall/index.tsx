@@ -1,19 +1,26 @@
+import {NavigationProp, ParamListBase} from '@react-navigation/native';
 import React from 'react';
-import {Image, Text, View} from 'react-native';
+import {Image, Pressable, Text, View} from 'react-native';
 
 import {BgIcon, PlayIcon} from '../../images';
 
 import styles from './styles';
 
-const PodcastPlayer = () => {
+const PodcastPlayer = ({
+  navigation,
+}: {
+  navigation: NavigationProp<ParamListBase>;
+}) => {
   return (
-    <View style={styles.container}>
-      <View style={styles.containerLeft}>
-        <Image source={BgIcon} />
-        <Text style={styles.text}>Podcast Title</Text>
+    <Pressable onPress={() => navigation.navigate('Player')}>
+      <View style={styles.container}>
+        <View style={styles.containerLeft}>
+          <Image source={BgIcon} />
+          <Text style={styles.text}>Podcast Title</Text>
+        </View>
+        <Image source={PlayIcon} />
       </View>
-      <Image source={PlayIcon} />
-    </View>
+    </Pressable>
   );
 };
 

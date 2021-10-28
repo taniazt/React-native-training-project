@@ -1,3 +1,4 @@
+import {NavigationProp, ParamListBase} from '@react-navigation/native';
 import React from 'react';
 import {
   Image,
@@ -76,7 +77,11 @@ const DATA: DataItem[] = [
   },
 ];
 type titleTypes = 'LIST VIEW' | 'SORT BY' | 'AVAILABLE PODCASTS';
-const Settings = () => {
+const Settings = ({
+  navigation,
+}: {
+  navigation: NavigationProp<ParamListBase>;
+}) => {
   const dispatch = useDispatch();
 
   const selectedView = useSelector(selectIsCompact);
@@ -97,7 +102,8 @@ const Settings = () => {
         dispatch(handleAvailablePodcastsToggle({podcastName: checkedItem}));
         break;
       default:
-        'LIST VIEW';
+        dispatch(handleIsCompactToggle({isCompact: checkedItem}));
+        break;
     }
   };
   return (
@@ -126,7 +132,7 @@ const Settings = () => {
         />
       </View>
       <View>
-        <PodcastPlayer />
+        <PodcastPlayer navigation={navigation} />
       </View>
     </View>
   );

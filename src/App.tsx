@@ -6,6 +6,7 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 
 import Login from './Screens/Login';
 import MagicLink from './Screens/MagicLink';
+import Player from './Screens/Player';
 import Podcasts from './Screens/Podcasts/Podcasts';
 import Settings from './Screens/Settings';
 
@@ -20,6 +21,7 @@ const App = () => {
           <Stack.Screen name="MagicLink" component={MagicLink} />
           <Stack.Screen name="Podcasts" component={Podcasts} />
           <Stack.Screen name="Settings" component={Settings} />
+          <Stack.Screen name="Player" component={Player} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaView>

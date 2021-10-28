@@ -1,3 +1,4 @@
+import {NavigationProp, ParamListBase} from '@react-navigation/native';
 import React from 'react';
 import {Text, View} from 'react-native';
 
@@ -5,7 +6,11 @@ import Button from '../../components/Button';
 
 import styles from './styles';
 
-const Verification = ({navigation}: {navigation: any}) => {
+const Verification = ({
+  navigation,
+}: {
+  navigation: NavigationProp<ParamListBase>;
+}) => {
   const handleOnPress = () => navigation.navigate('Podcasts');
 
   return (
