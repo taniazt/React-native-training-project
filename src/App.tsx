@@ -3,6 +3,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
+import Episodes from './Screens/Episodes';
 
 import Login from './Screens/Login';
 import MagicLink from './Screens/MagicLink';
@@ -22,6 +23,7 @@ const App = () => {
           <Stack.Screen name="Podcasts" component={Podcasts} />
           <Stack.Screen name="Settings" component={Settings} />
           <Stack.Screen name="Player" component={Player} />
+          <Stack.Screen name="Episodes" component={Episodes} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaView>

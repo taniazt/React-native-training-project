@@ -43,13 +43,19 @@ const LibraryTab = ({
         contentContainerStyle={styles.scrollViewContainer}>
         {selectedView === 'Cards'
           ? podcastInfo.map(item => (
-              <Podcast key={item.title} title={item.title} text={item.text} />
+              <Podcast
+                key={item.title}
+                title={item.title}
+                text={item.text}
+                navigation={navigation}
+              />
             ))
           : podcastInfo.map(item => (
               <PodcastCompact
                 key={item.title}
                 title={item.title}
                 text={item.text}
+                navigation={navigation}
               />
             ))}
       </ScrollView>
