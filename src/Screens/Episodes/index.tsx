@@ -1,9 +1,11 @@
 import React, {useState} from 'react';
-import {ImageBackground, Pressable, Text, View} from 'react-native';
+import {ImageBackground, Pressable, ScrollView, Text, View} from 'react-native';
+import {useSelector} from 'react-redux';
 
 import {PlayerBg} from '../../images';
-import Episode from './Episode';
+import {selectedPodcastId, selectPodcastsList} from '../../store/selectors';
 
+import Episode from './Episode';
 import styles from './styles';
 
 const Episodes = () => {
@@ -13,15 +15,18 @@ const Episodes = () => {
     setSelected(param);
   };
 
+  const podcastsList = useSelector(selectPodcastsList);
+  const selectedId = useSelector(selectedPodcastId);
+
+  const selectedPodcast = podcastsList.find(
+    podcast => podcast.podcastId === selectedId,
+  );
+
   return (
     <>
       <ImageBackground source={PlayerBg} style={styles.podcastContainer}>
-        <Text style={styles.podcastTitle}>Podcast Title</Text>
-        <Text style={styles.podcastText}>
-          About Podcast, amet minim mollit non deserunt ullamco est sit aliqua
-          dolor do amet sint. Velit officia consequat duis enim velit mollit
-          ...more
-        </Text>
+        <Text style={styles.podcastTitle}>{selectedPodcast?.title}</Text>
+        <Text style={styles.podcastText}>{selectedPodcast?.about}</Text>
       </ImageBackground>
       <View style={styles.toggleContainer}>
         <Pressable
@@ -50,7 +55,17 @@ const Episodes = () => {
           </Text>
         </Pressable>
       </View>
-      <Episode />
+      <ScrollView>
+        {selectedPodcast?.episodes.map(episode => (
+          <Episode
+            key={episode.episodeNumber}
+            title={episode.episodeTitle}
+            number={episode.episodeNumber}
+            date={episode.episodeDate}
+            about={episode.episodeAbout}
+          />
+        ))}
+      </ScrollView>
     </>
   );
 };

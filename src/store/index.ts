@@ -1,5 +1,6 @@
 import {configureStore} from '@reduxjs/toolkit';
 
+import podcastsReducer from './podcastSlice';
 import settingsReducer from './toggleSlice';
 
 const middleware = [];
@@ -15,6 +16,7 @@ if (__DEV__) {
 const store = configureStore({
   reducer: {
     settings: settingsReducer,
+    podcasts: podcastsReducer,
   },
   middleware,
 });

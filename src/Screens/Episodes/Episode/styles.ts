@@ -4,11 +4,12 @@ const styles = StyleSheet.create({
   episodeContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    paddingRight: 30,
+    paddingRight: 20,
     paddingLeft: 12,
     paddingVertical: 20,
     borderBottomWidth: 1,
     borderBottomColor: '#D6DCEA',
+    alignItems: 'flex-end',
   },
   episodeTitle: {
     fontSize: 16,
@@ -33,6 +34,11 @@ const styles = StyleSheet.create({
   },
   episodeBlock: {
     flexDirection: 'row',
+    flexShrink: 1,
+  },
+  episodeArrow: {
+    marginBottom: 10,
+    marginLeft: 30,
   },
 });
 

@@ -1,6 +1,6 @@
 import ArrowIcon from './images/arrow-icon.png';
 import BgIcon from './images/bg-icon.png';
-import EpisodeArrow from './images/episode-arrow.svg';
+import EpisodeArrow from './images/episode-arrow.png';
 import IconSettings from './images/icon-settings.png';
 import LibraryActiveIcon from './images/library-active-icon.svg';
 import LibraryInactiveIcon from './images/library-inactive-icon.svg';

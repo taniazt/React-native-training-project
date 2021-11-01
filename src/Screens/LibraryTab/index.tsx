@@ -6,20 +6,11 @@ import {useSelector} from 'react-redux';
 
 import PodcastPlayer from '../../components/PlayerSmall';
 import {IconSettings} from '../../images';
-import {selectIsCompact} from '../../store/selectors';
+import {selectIsCompact, selectPodcastsList} from '../../store/selectors';
 
 import Podcast from './Podcast';
 import PodcastCompact from './PodcastCompact';
 import styles from './styles';
-
-const podcastInfo = [
-  {title: 'Podcast Title', text: '12 unplayed episodes'},
-  {
-    title: 'Overcome issues to meet key milestones',
-    text: '2 unplayed episodes',
-  },
-  {title: 'Focus on the bandwidth', text: '0 unplayed episodes'},
-];
 
 const LibraryTab = ({
   navigation,
@@ -27,6 +18,7 @@ const LibraryTab = ({
   navigation: NavigationProp<ParamListBase>;
 }) => {
   const selectedView = useSelector(selectIsCompact);
+  const podcastsList = useSelector(selectPodcastsList);
 
   return (
     <>
@@ -42,20 +34,22 @@ const LibraryTab = ({
         style={styles.scrollView}
         contentContainerStyle={styles.scrollViewContainer}>
         {selectedView === 'Cards'
-          ? podcastInfo.map(item => (
+          ? podcastsList.map(item => (
               <Podcast
-                key={item.title}
+                key={item.podcastId}
                 title={item.title}
-                text={item.text}
+                text={item.unplayed}
                 navigation={navigation}
+                id={item.podcastId}
               />
             ))
-          : podcastInfo.map(item => (
+          : podcastsList.map(item => (
               <PodcastCompact
-                key={item.title}
+                key={item.podcastId}
                 title={item.title}
-                text={item.text}
+                text={item.unplayed}
                 navigation={navigation}
+                id={item.podcastId}
               />
             ))}
       </ScrollView>
