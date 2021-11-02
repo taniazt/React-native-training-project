@@ -8,12 +8,16 @@ import {selectedPodcastId, selectPodcastsList} from '../../store/selectors';
 import Episode from './Episode';
 import styles from './styles';
 
-const Episodes = () => {
-  const [selected, setSelected] = useState(true);
+export type selectedTabType = 'UNPLAYED' | 'ALL';
 
-  const onPressHandle = (param: boolean) => {
-    setSelected(param);
+const Episodes = () => {
+  const [selectedTab, setSelectedTab] = useState<selectedTabType>('UNPLAYED');
+
+  const onPressHandle = (param: selectedTabType) => {
+    setSelectedTab(param);
   };
+
+  const isSelected = (type: selectedTabType) => type === selectedTab;
 
   const podcastsList = useSelector(selectPodcastsList);
   const selectedId = useSelector(selectedPodcastId);
@@ -30,11 +34,15 @@ const Episodes = () => {
       </ImageBackground>
       <View style={styles.toggleContainer}>
         <Pressable
-          onPress={() => onPressHandle(true)}
-          style={selected ? styles.selectedButton : styles.nonSelectedButton}>
+          onPress={() => onPressHandle('UNPLAYED')}
+          style={
+            isSelected('UNPLAYED')
+              ? styles.selectedButton
+              : styles.nonSelectedButton
+          }>
           <Text
             style={
-              selected
+              isSelected('UNPLAYED')
                 ? styles.selectedButtonText
                 : styles.nonSelectedButtonText
             }>
@@ -43,11 +51,13 @@ const Episodes = () => {
         </Pressable>
 
         <Pressable
-          onPress={() => onPressHandle(false)}
-          style={!selected ? styles.selectedButton : styles.nonSelectedButton}>
+          onPress={() => onPressHandle('ALL')}
+          style={
+            isSelected('ALL') ? styles.selectedButton : styles.nonSelectedButton
+          }>
           <Text
             style={
-              !selected
+              isSelected('ALL')
                 ? styles.selectedButtonText
                 : styles.nonSelectedButtonText
             }>
