@@ -13,6 +13,7 @@ export const podcastInfo = [
         episodeDate: new Date('2020-11-09').toISOString(),
         episodeAbout:
           'About episode, amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis...',
+        played: false,
       },
       {
         episodeNumber: 2,
@@ -21,6 +22,7 @@ export const podcastInfo = [
         episodeDate: new Date('2020-12-11').toISOString(),
         episodeAbout:
           'About episode, amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis...',
+        played: true,
       },
       {
         episodeNumber: 3,
@@ -29,6 +31,7 @@ export const podcastInfo = [
         episodeDate: new Date('2020-03-21').toISOString(),
         episodeAbout:
           'About episode, amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis...',
+        played: true,
       },
       {
         episodeNumber: 4,
@@ -37,6 +40,7 @@ export const podcastInfo = [
         episodeDate: new Date('2019-08-23').toISOString(),
         episodeAbout:
           'About episode, amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis...',
+        played: true,
       },
     ],
   },
@@ -54,6 +58,7 @@ export const podcastInfo = [
         episodeDate: new Date('2020-11-09').toISOString(),
         episodeAbout:
           'About episode, amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis...',
+        played: false,
       },
       {
         episodeNumber: 2,
@@ -62,6 +67,7 @@ export const podcastInfo = [
         episodeDate: new Date('2020-12-11').toISOString(),
         episodeAbout:
           'About episode, amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis...',
+        played: true,
       },
       {
         episodeNumber: 3,
@@ -70,6 +76,7 @@ export const podcastInfo = [
         episodeDate: new Date('2020-03-21').toISOString(),
         episodeAbout:
           'About episode, amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis...',
+        played: true,
       },
       {
         episodeNumber: 4,
@@ -78,6 +85,7 @@ export const podcastInfo = [
         episodeDate: new Date('2019-08-23').toISOString(),
         episodeAbout:
           'About episode, amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis...',
+        played: false,
       },
     ],
   },
@@ -95,6 +103,7 @@ export const podcastInfo = [
         episodeDate: new Date('2020-11-09').toISOString(),
         episodeAbout:
           'About episode, amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis...',
+        played: false,
       },
       {
         episodeNumber: 2,
@@ -103,6 +112,7 @@ export const podcastInfo = [
         episodeDate: new Date('2020-12-11').toISOString(),
         episodeAbout:
           'About episode, amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis...',
+        played: false,
       },
       {
         episodeNumber: 3,
@@ -111,6 +121,7 @@ export const podcastInfo = [
         episodeDate: new Date('2020-03-21').toISOString(),
         episodeAbout:
           'About episode, amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis...',
+        played: false,
       },
       {
         episodeNumber: 4,
@@ -119,6 +130,7 @@ export const podcastInfo = [
         episodeDate: new Date('2019-08-23').toISOString(),
         episodeAbout:
           'About episode, amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis...',
+        played: true,
       },
     ],
   },

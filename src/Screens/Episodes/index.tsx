@@ -7,8 +7,7 @@ import {selectedPodcastId, selectPodcastsList} from '../../store/selectors';
 
 import Episode from './Episode';
 import styles from './styles';
-
-export type selectedTabType = 'UNPLAYED' | 'ALL';
+import {EpisodeType, selectedTabType} from './types';
 
 const Episodes = () => {
   const [selectedTab, setSelectedTab] = useState<selectedTabType>('UNPLAYED');
@@ -25,6 +24,9 @@ const Episodes = () => {
   const selectedPodcast = podcastsList.find(
     podcast => podcast.podcastId === selectedId,
   );
+
+  const unplayedFilter = (episode: EpisodeType) =>
+    isSelected('UNPLAYED') ? !episode.played : true;
 
   return (
     <>
@@ -66,7 +68,7 @@ const Episodes = () => {
         </Pressable>
       </View>
       <ScrollView>
-        {selectedPodcast?.episodes.map(episode => (
+        {selectedPodcast?.episodes.filter(unplayedFilter).map(episode => (
           <Episode
             key={episode.episodeNumber}
             title={episode.episodeTitle}
