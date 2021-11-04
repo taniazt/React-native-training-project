@@ -3,13 +3,9 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
-import Episodes from './Screens/Episodes';
 
-import Login from './Screens/Login';
-import MagicLink from './Screens/MagicLink';
-import Player from './Screens/Player';
-import Podcasts from './Screens/Podcasts/Podcasts';
-import Settings from './Screens/Settings';
+import {AuthStack} from './navigation/AuthStack';
+import {PodcastsStack} from './navigation/PodcastsStack';
 
 const Stack = createNativeStackNavigator();
 
@@ -17,13 +13,13 @@ const App = () => {
   return (
     <SafeAreaView style={{flex: 1}}>
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="Login">
-          <Stack.Screen name="Login" component={Login} />
-          <Stack.Screen name="MagicLink" component={MagicLink} />
-          <Stack.Screen name="Podcasts" component={Podcasts} />
-          <Stack.Screen name="Settings" component={Settings} />
-          <Stack.Screen name="Player" component={Player} />
-          <Stack.Screen name="Episodes" component={Episodes} />
+        <Stack.Navigator
+          initialRouteName="Login"
+          screenOptions={() => ({
+            headerShown: false,
+          })}>
+          <Stack.Screen name="Login" component={AuthStack} />
+          <Stack.Screen name="Podcasts" component={PodcastsStack} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaView>
