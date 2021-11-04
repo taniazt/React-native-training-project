@@ -20,7 +20,7 @@ export const Podcasts = () => {
       })}
       initialRouteName="Library"
       tabBar={props => <BottomTabBar {...props} />}>
-      <TabNavigator.Screen name="Player" component={PLayer} />
+      <TabNavigator.Screen name="Listen Now" component={PLayer} />
       <TabNavigator.Screen name="Library" component={LibraryTab} />
       <TabNavigator.Screen name="Account" component={AccountTab} />
     </TabNavigator.Navigator>
