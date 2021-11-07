@@ -2,7 +2,7 @@ export const podcastInfo = [
   {
     title: 'Podcast One',
     about:
-      'About Podcast, amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit ...more',
+      'About Podcast, amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit About Podcast, amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit',
     podcastId: 1,
     unplayed: '12 unplayed episodes',
     episodes: [
@@ -12,7 +12,7 @@ export const podcastInfo = [
           'Have bandwidth we just need to put these last issues to bed.',
         episodeDate: new Date('2020-11-09').toISOString(),
         episodeAbout:
-          'About episode, amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis...',
+          'About episode, amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat dui episode, amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat dui',
         played: false,
       },
       {
@@ -47,7 +47,7 @@ export const podcastInfo = [
   {
     title: 'Overcome issues to meet key milestones',
     about:
-      'About Podcast, amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit ...more',
+      'About Podcast, amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit About Podcast, amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit',
     podcastId: 2,
     unplayed: '2 unplayed episodes',
     episodes: [
@@ -92,7 +92,7 @@ export const podcastInfo = [
   {
     title: 'Focus on the bandwidth',
     about:
-      'About Podcast, amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit ...more',
+      'About Podcast, amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit About Podcast, amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit',
     podcastId: 3,
     unplayed: '0 unplayed episodes',
     episodes: [

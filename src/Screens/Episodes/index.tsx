@@ -11,6 +11,7 @@ import {EpisodeType, selectedTabType} from './types';
 
 const Episodes = () => {
   const [selectedTab, setSelectedTab] = useState<selectedTabType>('UNPLAYED');
+  const [collapsedText, setCollapsedText] = useState<boolean>(true);
 
   const onPressHandle = (param: selectedTabType) => {
     setSelectedTab(param);
@@ -28,11 +29,42 @@ const Episodes = () => {
   const unplayedFilter = (episode: EpisodeType) =>
     isSelected('UNPLAYED') ? !episode.played : true;
 
+  const isCollapsedText = () => {
+    setCollapsedText(false);
+  };
+
+  const isExtendedText = () => {
+    setCollapsedText(true);
+  };
+
   return (
     <>
       <ImageBackground source={PlayerBg} style={styles.podcastContainer}>
         <Text style={styles.podcastTitle}>{selectedPodcast?.title}</Text>
-        <Text style={styles.podcastText}>{selectedPodcast?.about}</Text>
+
+        {selectedPodcast?.about &&
+        collapsedText &&
+        selectedPodcast.about.length > 135 ? (
+          <Text>
+            <Text style={styles.podcastText}>
+              {selectedPodcast.about.substring(0, 135)}
+            </Text>
+            {collapsedText && (
+              <Text style={styles.podcastText} onPress={isCollapsedText}>
+                ...more
+              </Text>
+            )}
+          </Text>
+        ) : selectedPodcast!.about.length < 135 ? (
+          <Text>{selectedPodcast!.about}</Text>
+        ) : (
+          <Text>
+            <Text style={styles.podcastText}>{selectedPodcast!.about}</Text>
+            <Text style={styles.podcastText} onPress={isExtendedText}>
+              ...less
+            </Text>
+          </Text>
+        )}
       </ImageBackground>
       <View style={styles.toggleContainer}>
         <Pressable

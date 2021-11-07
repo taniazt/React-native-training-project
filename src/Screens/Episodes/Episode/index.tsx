@@ -28,7 +28,9 @@ const Episode = ({
             {number}: {title}
           </Text>
           <Text style={styles.episodeDate}>{episodeDate}</Text>
-          <Text style={styles.episodeText}>{about}</Text>
+          <Text style={styles.episodeText} numberOfLines={3}>
+            {about}
+          </Text>
         </View>
       </View>
       <Image source={EpisodeArrow} style={styles.episodeArrow} />

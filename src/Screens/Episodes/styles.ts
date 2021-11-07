@@ -2,7 +2,6 @@ import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
   podcastContainer: {
-    height: 160,
     justifyContent: 'center',
     alignItems: 'center',
     paddingHorizontal: 30,
