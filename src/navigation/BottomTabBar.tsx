@@ -7,18 +7,27 @@ import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIc
 
 import CustomIcon from '../../CustomIcon.js';
 
+export type pressedTabType = 'Listen Now' | 'Library' | 'Account';
+
 const BottomTabBar: React.FC<BottomTabBarProps> = ({navigation}) => {
-  const tabs = [
+  const tabs: {
+    icon: JSX.Element;
+    iconActive: JSX.Element;
+    label: pressedTabType;
+    route: string;
+  }[] = [
     {
-      icon: <FeatherIcon name="play-circle" size={25} color="grey" />,
-      iconActive: <FeatherIcon name="play-circle" size={25} color="#5F596E" />,
+      icon: <FeatherIcon name="play-circle" size={25} color="#c2c2c2" />,
+      iconActive: <FeatherIcon name="play-circle" size={25} color="#495574" />,
       label: 'Listen Now',
       route: 'Listen Now',
     },
     {
-      icon: <CustomIcon name="library-inactive-icon" size={25} color="grey" />,
+      icon: (
+        <CustomIcon name="library-inactive-icon" size={25} color="#c2c2c2" />
+      ),
       iconActive: (
-        <CustomIcon name="library-active-icon" size={25} color="#5F596E" />
+        <CustomIcon name="library-active-icon" size={25} color="#495574" />
       ),
       label: 'Library',
       route: 'Library',
@@ -28,14 +37,14 @@ const BottomTabBar: React.FC<BottomTabBarProps> = ({navigation}) => {
         <MaterialCommunityIcon
           name="account-circle-outline"
           size={25}
-          color="grey"
+          color="#c2c2c2"
         />
       ),
       iconActive: (
         <MaterialCommunityIcon
           name="account-circle-outline"
           size={25}
-          color="#5F596E"
+          color="#495574"
         />
       ),
       label: 'Account',
@@ -43,25 +52,35 @@ const BottomTabBar: React.FC<BottomTabBarProps> = ({navigation}) => {
     },
   ];
 
-  const [isActive, setIsActive] = useState(false);
+  const [isActive, setIsActive] = useState('Library');
 
-  const handleActiveTab = () => {
-    setIsActive(true);
+  const handleActiveTab = (tab: pressedTabType) => {
+    setIsActive(tab);
   };
 
+  const isTabActive = (type: pressedTabType) => type === isActive;
+
   return (
-    <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
+    <View
+      style={{
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        paddingVertical: 10,
+      }}>
       {tabs.map(item => {
         return (
           <TouchableOpacity
             key={item.route}
             onPress={() => {
-              handleActiveTab();
+              handleActiveTab(item.label);
               navigation.navigate(item.route);
             }}>
-            <View>
-              {isActive ? item.iconActive : item.icon}
-              <Text style={{color: `${isActive ? 'grey' : 'red'}`}}>
+            <View style={{alignItems: 'center'}}>
+              {isTabActive(item.label) ? item.iconActive : item.icon}
+              <Text
+                style={{
+                  color: `${isTabActive(item.label) ? '#495574' : '#c2c2c2'}`,
+                }}>
                 {item.label}
               </Text>
             </View>
