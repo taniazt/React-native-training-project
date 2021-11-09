@@ -30,8 +30,8 @@ export const Podcasts = () => {
 const Stack = createNativeStackNavigator();
 
 export const PodcastsStack = () => (
-  <Stack.Navigator initialRouteName="Library">
-    <Stack.Screen name="Podcasts" component={Podcasts} />
+  <Stack.Navigator initialRouteName="PodcastsPage">
+    <Stack.Screen name="PodcastsPage" component={Podcasts} />
     <Stack.Screen name="Settings" component={Settings} />
     <Stack.Screen name="Episodes" component={Episodes} />
   </Stack.Navigator>

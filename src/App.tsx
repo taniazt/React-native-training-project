@@ -14,11 +14,11 @@ const App = () => {
     <SafeAreaView style={{flex: 1}}>
       <NavigationContainer>
         <Stack.Navigator
-          initialRouteName="Login"
+          initialRouteName="Authorization"
           screenOptions={() => ({
             headerShown: false,
           })}>
-          <Stack.Screen name="Login" component={AuthStack} />
+          <Stack.Screen name="Authorization" component={AuthStack} />
           <Stack.Screen name="Podcasts" component={PodcastsStack} />
         </Stack.Navigator>
       </NavigationContainer>
