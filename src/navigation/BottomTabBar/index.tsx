@@ -5,17 +5,12 @@ import {Text, TouchableOpacity, View} from 'react-native';
 import FeatherIcon from 'react-native-vector-icons/Feather';
 import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-import CustomIcon from '../../CustomIcon.js';
+import CustomIcon from '../../../CustomIcon.js';
 
-export type pressedTabType = 'Listen Now' | 'Library' | 'Account';
+import {Tabs} from './types.js';
 
 const BottomTabBar: React.FC<BottomTabBarProps> = ({navigation}) => {
-  const tabs: {
-    icon: JSX.Element;
-    iconActive: JSX.Element;
-    label: pressedTabType;
-    route: string;
-  }[] = [
+  const tabs: Tabs = [
     {
       icon: <FeatherIcon name="play-circle" size={25} color="#c2c2c2" />,
       iconActive: <FeatherIcon name="play-circle" size={25} color="#495574" />,
@@ -54,10 +49,6 @@ const BottomTabBar: React.FC<BottomTabBarProps> = ({navigation}) => {
 
   const [isActive, setIsActive] = useState('Library');
 
-  const handleActiveTab = (tab: pressedTabType) => {
-    setIsActive(tab);
-  };
-
   const isTabActive = (type: pressedTabType) => type === isActive;
 
   return (
@@ -72,7 +63,7 @@ const BottomTabBar: React.FC<BottomTabBarProps> = ({navigation}) => {
           <TouchableOpacity
             key={item.route}
             onPress={() => {
-              handleActiveTab(item.label);
+              setIsActive(item.label);
               navigation.navigate(item.route);
             }}>
             <View style={{alignItems: 'center'}}>

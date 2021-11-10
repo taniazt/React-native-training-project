@@ -29,14 +29,6 @@ const Episodes = () => {
   const unplayedFilter = (episode: EpisodeType) =>
     isSelected('UNPLAYED') ? !episode.played : true;
 
-  const isCollapsedText = () => {
-    setCollapsedText(false);
-  };
-
-  const isExtendedText = () => {
-    setCollapsedText(true);
-  };
-
   return (
     <>
       <ImageBackground source={PlayerBg} style={styles.podcastContainer}>
@@ -44,23 +36,29 @@ const Episodes = () => {
 
         {selectedPodcast?.about &&
         collapsedText &&
-        selectedPodcast.about.length > 135 ? (
+        selectedPodcast.about.length >= 135 ? (
           <Text>
             <Text style={styles.podcastText}>
               {selectedPodcast.about.substring(0, 135)}
             </Text>
-            {collapsedText && (
-              <Text style={styles.podcastText} onPress={isCollapsedText}>
-                ...more
-              </Text>
-            )}
+            <Text
+              style={styles.podcastText}
+              onPress={() => {
+                setCollapsedText(false);
+              }}>
+              ...more
+            </Text>
           </Text>
         ) : selectedPodcast!.about.length < 135 ? (
           <Text>{selectedPodcast!.about}</Text>
         ) : (
           <Text>
             <Text style={styles.podcastText}>{selectedPodcast!.about}</Text>
-            <Text style={styles.podcastText} onPress={isExtendedText}>
+            <Text
+              style={styles.podcastText}
+              onPress={() => {
+                setCollapsedText(true);
+              }}>
               ...less
             </Text>
           </Text>

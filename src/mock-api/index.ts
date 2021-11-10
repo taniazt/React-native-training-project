@@ -2,7 +2,7 @@ export const podcastInfo = [
   {
     title: 'Podcast One',
     about:
-      'About Podcast, amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit About Podcast, amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit',
+      'About Podcast, amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.',
     podcastId: 1,
     unplayed: '12 unplayed episodes',
     episodes: [
